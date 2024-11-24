@@ -39,10 +39,18 @@
     "prefix": "remix-links",
     "body": ["export const links: LinksFunction = () => {", "  return []", "}"]
   },
+  "dynamic-meta": {
+    "prefix": "remix-dynamic-meta",
+    "body": [
+      "export const meta: MetaFunction<typeof loader> = ({ data }) => [{",
+      "  title: 'Title',",
+      "}]"
+    ]
+  },
   "meta": {
     "prefix": "remix-meta",
     "body": [
-      "export const meta: MetaFunction<typeof loader> = ({ data }) => [{",
+      "export const meta: MetaFunction  = () => [{",
       "  title: 'Title',",
       "}]"
     ]
