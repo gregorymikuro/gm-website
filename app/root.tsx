@@ -5,8 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react';
-import './styles/styles.css';
+} from "@remix-run/react";
+import "./styles/global.css";
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="flex flex-col">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
