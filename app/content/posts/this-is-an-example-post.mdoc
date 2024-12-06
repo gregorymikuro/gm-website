@@ -3,11 +3,10 @@ title: This is an example post
 description: It is an example post!
 publishedDate: 2024-11-27
 isPublished: true
---- 
- 
+---
 ![](/app/images/posts/this-is-an-example-post/robt.png)
 
-Get {% uppercase("familiar")  %} with some of the core concepts that make Tailwind CSS different from writing traditional CSS.
+Get [object Object] with some of the core concepts that make Tailwind CSS different from writing traditional CSS.
 
 - one thing
 - another thing
@@ -21,7 +20,19 @@ npm create @keystatic@latest
 ```
 
 Picture 1
-![Picture 1](https://picsum.photos/id/26/400)
+
+{% remoteImage
+   src="https://picsum.photos/id/26/400"
+   altText="Some Glasses"
+   width=400
+   layout="constrained"
+   priority=false /%}
 
 Picture 2
-![Picture 1](https://picsum.photos/id/20/400)
+
+{% remoteImage
+   src="https://picsum.photos/id/20/400"
+   altText="Writing Books"
+   width=400
+   layout="constrained"
+   priority=false /%}
