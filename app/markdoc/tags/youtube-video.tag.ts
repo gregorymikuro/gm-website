@@ -1,6 +1,6 @@
 import { Schema } from "@markdoc/markdoc";
 
-export default {
+export const YoutubeVideoTag: Schema = {
   render: "YoutubeEmbed",
   attributes: {
     videoId: {
@@ -8,4 +8,4 @@ export default {
       required: true,
     },
   },
-} satisfies Schema;
+};

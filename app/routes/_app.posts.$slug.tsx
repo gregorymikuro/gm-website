@@ -58,7 +58,6 @@ export default function PostPage() {
   return (
     <div className="prose p-4">
       <h1>{post.title}</h1>
-
       <div>{Markdoc.renderers.react(post.content, React, { components })}</div>
     </div>
   );

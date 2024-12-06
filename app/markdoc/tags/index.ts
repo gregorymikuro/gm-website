@@ -1,5 +1,5 @@
-import youtubeVideo from "./youtube-video.tag";
+import { YoutubeVideoTag } from "./youtube-video.tag";
 
 export default {
-  youtubeVideo,
+  youtubeVideo: YoutubeVideoTag,
 };
