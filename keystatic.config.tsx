@@ -1,8 +1,6 @@
 import { config, fields } from "@keystatic/core";
 import { site } from "~/constants/config";
-import collections from "~/keystatic/collections";
-
-export const markdocConfig = fields.markdoc.createMarkdocConfig({});
+import collections from "~/keystatic/schemas/collections";
 
 export default config({
   ui: {
