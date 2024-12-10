@@ -3,10 +3,12 @@ import React from "react";
 import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { data } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import markdoc from "@markdoc/markdoc";
+import Markdoc from "@markdoc/markdoc";
 
 import { reader } from "~/keystatic/reader.server";
-import { markdocConfig } from "$/keystatic.config";
+
+import { markdocConfig } from "~/markdoc/config";
+import components from "~/markdoc/components";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => [
   {
@@ -30,14 +32,14 @@ export async function loader({ params }: LoaderFunctionArgs) {
     throw data({ message: "Not Found" }, { status: 404 });
   }
 
-  const errors = markdoc.validate(post.content.node, markdocConfig);
+  const errors = Markdoc.validate(post.content.node, markdocConfig);
 
   if (errors.length) {
     console.error(errors);
     throw data({ message: "Invalid content" }, { status: 404 });
   }
 
-  const content = markdoc.transform(post.content.node, markdocConfig);
+  const content = Markdoc.transform(post.content.node, markdocConfig);
 
   return data({
     post: {
@@ -56,7 +58,7 @@ export default function PostPage() {
   return (
     <div className="prose p-4">
       <h1>{post.title}</h1>
-      <div>{markdoc.renderers.react(post.content, React)}</div>
+      <div>{Markdoc.renderers.react(post.content, React, { components })}</div>
     </div>
   );
 }
